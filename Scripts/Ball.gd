@@ -6,6 +6,8 @@ var bodyPlayer
 var objetivoPelota : Vector2
 var altura : int = 0
 
+@export var weightLerp : float
+
 @onready var Match = get_tree().get_nodes_in_group("Match")[0]
 
 
@@ -22,7 +24,9 @@ func EstadosPelota():
 		"pelotaAlPie":
 			linear_velocity = Vector2.ZERO
 			Match.posesionTeam = bodyPlayer.equipo
-			global_transform.origin = bodyPlayer.ballPie
+			#global_transform.origin = bodyPlayer.ballPie. # ESTO FUNCIONABA, PERO BRUSCO
+			# PROBANDO LERP
+			global_transform.origin = lerp(global_transform.origin, bodyPlayer.ballPie, weightLerp )
 		"pelotaALaMano": 
 			pass
 
@@ -44,15 +48,11 @@ func _on_ball_area_body_entered(body):
 	if body.is_in_group("Player"):
 		bodyPlayer = body
 		if Match.isPelotaParada == true:
+			estadosPelota = "pelotaAlPie"
 			bodyPlayer.Pasar()
 			Match.isPelotaParada = false
 		else:
 			estadosPelota = "pelotaAlPie"
 
 
-func _on_ball_area_body_exited(_body):
-	pass
-	#if body.is_in_group("Player"):
-	#	estadosPelota = "libre"
-	#	bodyPlayer = null
 	

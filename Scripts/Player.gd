@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 50
+const SPEED = 50 # Era 50
 
 @export var speedBall : float
 
@@ -16,8 +16,7 @@ var areaLibertad : bool = false
 var rayoLibertad : bool = false
 var playerCercano
 var pateando : bool = false 
-# Se utiliza para que deje de mirar al objetivo y 
-# mire al destino de la pelota
+var weight : float = 0.1
 
 
 @onready var Ball = get_tree().get_nodes_in_group("Ball")[0]
@@ -38,7 +37,7 @@ func _physics_process(_delta):
 	
 	if objetivo: 
 		if pateando == false:
-			look_at(objetivo)	
+			Girar(objetivo)
 		var dis_obj = global_transform.origin.distance_to(objetivo)
 		if dis_obj > 3:
 			Desplazamiento()
@@ -51,11 +50,12 @@ func EncargadosFalta():
 
 func Pasar():
 	var destinoPase = equipo_a.DestinoPase()
-	Patear(destinoPase)
+	if Ball.estadosPelota == "pelotaAlPie":
+		Patear(destinoPase)
 
 func Patear(destino):
 	pateando = true
-	look_at(destino)
+	Girar(objetivo)
 	Ball.Patear(destino, speedBall)
 	Ball.estadosPelota = "libre"
 	pateando = false
@@ -63,6 +63,7 @@ func Patear(destino):
 
 func Conducir():
 	objetivo = objetivoConducir
+	Girar(objetivo)
 	if velocity != Vector2.ZERO:
 		$AnimationPlayer.play("conduccion") 
 	else: 	
@@ -74,6 +75,12 @@ func Desplazamiento():
 	direccion = direccion.normalized()
 	velocity = direccion * SPEED
 	move_and_slide()
+
+
+func Girar(destino):
+	var origen = global_transform.origin
+	var angulo_destino = (origen - destino).normalized().angle()
+	rotation = lerp_angle(rotation, angulo_destino, weight)
 
 
 func MovManual():

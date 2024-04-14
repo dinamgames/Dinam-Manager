@@ -39,7 +39,7 @@ size = Vector2(18.4333, 3.04594)
 size = Vector2(4.06773, 82.3464)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqyt4"]
-size = Vector2(216.583, 380.429)
+size = Vector2(223.292, 380.429)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ggkav"]
 size = Vector2(195.382, 355.438)
@@ -94,7 +94,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(9, 0)]
+"values": [Vector2(-9, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_i1erh"]
@@ -111,7 +111,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.4, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(9, 0), Vector2(19, 0), Vector2(9, 0)]
+"values": [Vector2(-9, 0), Vector2(-19, 0), Vector2(-9, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_12ocg"]
@@ -129,7 +129,7 @@ radius = 20.0
 radius = 1.7
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1fvwe"]
-radius = 3.06647
+radius = 2.0223
 
 [node name="Match" type="Node2D" groups=["Match"]]
 script = ExtResource("1_1xabp")
@@ -310,7 +310,7 @@ collision_layer = 16
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/Arco1/Triggers/AreaDisparo"]
-position = Vector2(106, 9.5)
+position = Vector2(109.354, 9.5)
 shape = SubResource("RectangleShape2D_eqyt4")
 
 [node name="AreaPenal" type="Area2D" parent="Escenario/Arco1/Triggers"]
@@ -537,7 +537,7 @@ text = "1"
 shape = SubResource("CircleShape2D_uls8d")
 
 [node name="ballPie" type="Marker2D" parent="Players/EquipoA/PlayerA01"]
-position = Vector2(9, 0)
+position = Vector2(-9, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Players/EquipoA/PlayerA01"]
 libraries = {
@@ -556,7 +556,7 @@ script = ExtResource("14_u8vcb")
 shape = SubResource("CircleShape2D_yfuhh")
 
 [node name="RayoLibertad" type="RayCast2D" parent="Players/EquipoA/PlayerA01/Triggers"]
-target_position = Vector2(60, 0)
+target_position = Vector2(-60, 0)
 
 [node name="Personal" type="Node2D" parent="Players/EquipoA/PlayerA01"]
 script = ExtResource("12_ohwlb")
@@ -597,7 +597,7 @@ text = "2"
 shape = SubResource("CircleShape2D_uls8d")
 
 [node name="ballPie" type="Marker2D" parent="Players/EquipoA/PlayerA02"]
-position = Vector2(9, 0)
+position = Vector2(-9, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Players/EquipoA/PlayerA02"]
 libraries = {
@@ -616,7 +616,7 @@ script = ExtResource("14_u8vcb")
 shape = SubResource("CircleShape2D_yfuhh")
 
 [node name="RayoLibertad" type="RayCast2D" parent="Players/EquipoA/PlayerA02/Triggers"]
-target_position = Vector2(60, 0)
+target_position = Vector2(-60, 0)
 
 [node name="Personal" type="Node2D" parent="Players/EquipoA/PlayerA02"]
 script = ExtResource("14_b8o25")
@@ -636,6 +636,7 @@ max_contacts_reported = 30
 contact_monitor = true
 linear_damp = 0.5
 script = ExtResource("5_k037j")
+weightLerp = 0.3
 
 [node name="Sprite2D" type="Sprite2D" parent="Ball"]
 texture_filter = 3
@@ -653,7 +654,7 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_1fvwe")
 
 [node name="Camera2D" type="Camera2D" parent="Ball"]
-zoom = Vector2(3, 3)
+zoom = Vector2(4, 4)
 limit_left = 0
 limit_top = 0
 limit_right = 1920
@@ -665,4 +666,3 @@ position_smoothing_speed = 2.0
 [connection signal="body_entered" from="Escenario/Arco1/Triggers/AreaDisparo" to="Players/EquipoA" method="_on_area_disparo_body_entered"]
 [connection signal="body_exited" from="Escenario/Arco1/Triggers/AreaDisparo" to="Players/EquipoA" method="_on_area_disparo_body_exited"]
 [connection signal="body_entered" from="Ball/BallArea" to="Ball" method="_on_ball_area_body_entered"]
-[connection signal="body_exited" from="Ball/BallArea" to="Ball" method="_on_ball_area_body_exited"]
