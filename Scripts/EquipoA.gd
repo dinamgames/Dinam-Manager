@@ -32,9 +32,15 @@ func DisPlayersPelota():
 		
 func DestinoPase(): # Esta función reemplazarla por la elección de pase
 	if Ball.bodyPlayer == Player01:
-		destinoPase = Player02.global_transform.origin
+		if Player02.velocity != Vector2.ZERO:
+			destinoPase = Player02.ballPie
+		else:
+			destinoPase = Player02.global_transform.origin
 	else:
-		destinoPase = Player01.global_transform.origin
+		if Player01.velocity != Vector2.ZERO:
+			destinoPase = Player01.ballPie
+		else:
+			destinoPase = Player01.global_transform.origin
 		
 	return destinoPase
 		

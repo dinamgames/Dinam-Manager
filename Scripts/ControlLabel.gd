@@ -21,6 +21,7 @@ func _process(_delta):
 	)
 	$VBoxContainer/Label7.text = "Pelota Parada: " + str(Match.isPelotaParada)
 	$VBoxContainer/Label8.text = "En Partido: " + str(Match.enPartido)
+	
 
 
 

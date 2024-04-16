@@ -1,48 +1,47 @@
-[gd_scene load_steps=45 format=3 uid="uid://dal6qywx61j4"]
+[gd_scene load_steps=46 format=3 uid="uid://dal6qywx61j4"]
 
 [ext_resource type="Script" path="res://Scripts/match.gd" id="1_1xabp"]
-[ext_resource type="Texture2D" uid="uid://cmlnpr411sqs6" path="res://Assets/graphics/estadio.png" id="1_enylt"]
 [ext_resource type="Script" path="res://Scripts/ControlLabel.gd" id="2_nuei4"]
 [ext_resource type="Script" path="res://Scripts/FuncReinicio.gd" id="2_rn1kn"]
-[ext_resource type="Texture2D" uid="uid://duiy5j3uih5d7" path="res://Assets/graphics/Arco.png" id="2_wfi8a"]
-[ext_resource type="Texture2D" uid="uid://bm1k7b4m3gwmi" path="res://Assets/graphics/ball.png" id="3_6almw"]
+[ext_resource type="Texture2D" uid="uid://cn82n3jyg47ck" path="res://Assets/graphics/estadiox4.png" id="4_72lj5"]
 [ext_resource type="Script" path="res://Scripts/Ball.gd" id="5_k037j"]
+[ext_resource type="Texture2D" uid="uid://cji73yx4yuc35" path="res://Assets/graphics/Arc0x4.png" id="5_mugi6"]
 [ext_resource type="PhysicsMaterial" uid="uid://bc5gmq4x6b7ao" path="res://PhysicsMaterial/postes.tres" id="5_mxe2e"]
-[ext_resource type="Texture2D" uid="uid://8u8n8tn6ktqm" path="res://Assets/graphics/ChapaPlayer.png" id="5_wo162"]
 [ext_resource type="PhysicsMaterial" uid="uid://cfi21cs5qm6jx" path="res://PhysicsMaterial/redes.tres" id="6_578ch"]
 [ext_resource type="Texture2D" uid="uid://q8jjc5j3grjw" path="res://icon.svg" id="8_twy1i"]
 [ext_resource type="Script" path="res://Scripts/EquipoA.gd" id="9_hws5a"]
 [ext_resource type="Script" path="res://Scripts/Players.gd" id="9_yqymw"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="10_0uwb3"]
+[ext_resource type="Texture2D" uid="uid://w0lbiymgiig6" path="res://Assets/graphics/ChapaPlayer-export.png" id="12_8xl87"]
 [ext_resource type="Script" path="res://Scripts/PersonalA01.gd" id="12_ohwlb"]
 [ext_resource type="Script" path="res://Scripts/PersonalA02.gd" id="14_b8o25"]
 [ext_resource type="Script" path="res://Scripts/Decisiones.gd" id="14_u8vcb"]
+[ext_resource type="Texture2D" uid="uid://ctm0xanon1kcn" path="res://Assets/graphics/ball2x4.png" id="17_obw50"]
+[ext_resource type="Script" path="res://Scripts/Camera2DManager.gd" id="18_mb1ey"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ds67g"]
-radius = 1.7
-height = 6.0
+radius = 4.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ftk6"]
-radius = 1.7
-height = 6.0
+radius = 4.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ap057"]
-size = Vector2(3.625, 80.875)
+size = Vector2(8, 274)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dswey"]
-size = Vector2(17.4276, 3.3712)
+size = Vector2(130.717, 7.71695)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mnjkp"]
-size = Vector2(18.4333, 3.04594)
+size = Vector2(131.328, 7.57655)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmtof"]
-size = Vector2(4.06773, 82.3464)
+size = Vector2(8.90908, 266.286)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqyt4"]
-size = Vector2(223.292, 380.429)
+size = Vector2(850, 1900)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ggkav"]
-size = Vector2(195.382, 355.438)
+size = Vector2(655.086, 1600)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y36wg"]
 radius = 1.75934
@@ -68,19 +67,19 @@ size = Vector2(4.89996, 81.5172)
 bounce = 0.1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5o7x"]
-size = Vector2(20, 682.749)
+size = Vector2(60, 3600)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o38gs"]
-size = Vector2(24.5306, 675.318)
+size = Vector2(60, 3600)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbppi"]
-size = Vector2(1419.93, 20)
+size = Vector2(5800, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfknh"]
-size = Vector2(1421.28, 27.1401)
+size = Vector2(5800, 60)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uls8d"]
-radius = 6.0
+radius = 14.0
 
 [sub_resource type="Animation" id="Animation_yno8n"]
 length = 0.001
@@ -94,13 +93,13 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-9, 0)]
+"values": [Vector2(-25, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_i1erh"]
 resource_name = "conduccion"
-length = 0.8
 loop_mode = 1
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -108,10 +107,10 @@ tracks/0/path = NodePath("ballPie:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-9, 0), Vector2(-19, 0), Vector2(-9, 0)]
+"values": [Vector2(-25, 0), Vector2(-90, 0), Vector2(-25, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_12ocg"]
@@ -121,15 +120,15 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yfuhh"]
-radius = 20.0
+radius = 60.0
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tqvx2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r6vsu"]
-radius = 1.7
+radius = 4.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1fvwe"]
-radius = 2.0223
+radius = 6.0
 
 [node name="Match" type="Node2D" groups=["Match"]]
 script = ExtResource("1_1xabp")
@@ -226,72 +225,73 @@ layout_mode = 2
 
 [node name="Estadio" type="Sprite2D" parent="Escenario"]
 texture_filter = 3
-position = Vector2(960, 540)
-texture = ExtResource("1_enylt")
+position = Vector2(4264, 2392)
+texture = ExtResource("4_72lj5")
 
 [node name="Arco1" type="Node2D" parent="Escenario" groups=["Arco1"]]
-position = Vector2(421, 530)
+position = Vector2(2016, 2390.59)
 
 [node name="Sprite2D" type="Sprite2D" parent="Escenario/Arco1"]
 z_index = 4
 texture_filter = 3
 position = Vector2(-11, 0)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_wfi8a")
+texture = ExtResource("5_mugi6")
 flip_h = true
 
 [node name="Postes" type="Node2D" parent="Escenario/Arco1"]
 
 [node name="Palo1" type="StaticBody2D" parent="Escenario/Arco1/Postes"]
-position = Vector2(0, -42)
+position = Vector2(89.75, -132.25)
 collision_layer = 4
 collision_mask = 0
 physics_material_override = ExtResource("5_mxe2e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/Arco1/Postes/Palo1"]
-position = Vector2(-1.6492, 0.280579)
+position = Vector2(-12.1638, 0.169434)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ds67g")
 
 [node name="Palo2" type="StaticBody2D" parent="Escenario/Arco1/Postes"]
-position = Vector2(0, 43.6357)
+position = Vector2(93.3381, 135.56)
 collision_layer = 4
 collision_mask = 0
 physics_material_override = ExtResource("5_mxe2e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/Arco1/Postes/Palo2"]
-position = Vector2(-1.60083, 0)
+position = Vector2(-16.0779, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_2ftk6")
 
 [node name="Larguero" type="StaticBody2D" parent="Escenario/Arco1/Postes"]
+position = Vector2(66.8174, 2.67285)
 collision_layer = 8
 collision_mask = 0
 physics_material_override = ExtResource("5_mxe2e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/Arco1/Postes/Larguero"]
-position = Vector2(-3.4375, 1.0625)
+position = Vector2(-1.29199, -1.08252)
 shape = SubResource("RectangleShape2D_ap057")
 
 [node name="Redes" type="Node2D" parent="Escenario/Arco1"]
 
 [node name="Red1" type="StaticBody2D" parent="Escenario/Arco1/Redes"]
-position = Vector2(-12.4987, -42.4953)
+position = Vector2(9.32833, -132.476)
 collision_layer = 16
 collision_mask = 0
 physics_material_override = ExtResource("6_578ch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/Arco1/Redes/Red1"]
-position = Vector2(-1.28619, 0.469788)
+position = Vector2(-14.3986, 0.239746)
 shape = SubResource("RectangleShape2D_dswey")
 
 [node name="Red2" type="StaticBody2D" parent="Escenario/Arco1/Redes"]
+position = Vector2(56.6846, 90.9197)
 collision_layer = 16
 collision_mask = 0
 physics_material_override = ExtResource("6_578ch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/Arco1/Redes/Red2"]
-position = Vector2(-13.798, 43.889)
+position = Vector2(-63.1183, 44.345)
 shape = SubResource("RectangleShape2D_mnjkp")
 
 [node name="Red3" type="StaticBody2D" parent="Escenario/Arco1/Redes"]
@@ -300,33 +300,34 @@ collision_mask = 0
 physics_material_override = ExtResource("6_578ch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/Arco1/Redes/Red3"]
-position = Vector2(-21.7013, 1.11609)
+position = Vector2(-67.4502, -1.82324)
 shape = SubResource("RectangleShape2D_fmtof")
 
 [node name="Triggers" type="Node2D" parent="Escenario/Arco1"]
 
 [node name="AreaDisparo" type="Area2D" parent="Escenario/Arco1/Triggers"]
+position = Vector2(88, 0)
 collision_layer = 16
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/Arco1/Triggers/AreaDisparo"]
-position = Vector2(109.354, 9.5)
+position = Vector2(424, -8)
 shape = SubResource("RectangleShape2D_eqyt4")
 
 [node name="AreaPenal" type="Area2D" parent="Escenario/Arco1/Triggers"]
+position = Vector2(88, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/Arco1/Triggers/AreaPenal"]
-position = Vector2(98.6047, 9.67383)
+position = Vector2(328.457, 0)
 shape = SubResource("RectangleShape2D_ggkav")
 
 [node name="Arco2" type="Node2D" parent="Escenario"]
-position = Vector2(1499, 530)
+position = Vector2(6512.38, 2389.43)
 
 [node name="Sprite2D" type="Sprite2D" parent="Escenario/Arco2"]
 texture_filter = 3
 position = Vector2(11, 0)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_wfi8a")
+texture = ExtResource("5_mugi6")
 
 [node name="Postes" type="Node2D" parent="Escenario/Arco2"]
 
@@ -398,7 +399,8 @@ shape = SubResource("RectangleShape2D_262m3")
 position = Vector2(960, 540)
 
 [node name="Cartel1" type="StaticBody2D" parent="Escenario/LimEstadio"]
-position = Vector2(-700.791, 0)
+position = Vector2(488, 1852)
+scale = Vector2(0.205, 1)
 collision_layer = 16
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_riwsv")
@@ -408,7 +410,7 @@ position = Vector2(0, -0.549622)
 shape = SubResource("RectangleShape2D_q5o7x")
 
 [node name="Cartel2" type="StaticBody2D" parent="Escenario/LimEstadio"]
-position = Vector2(701.776, 0)
+position = Vector2(6104, 1852)
 collision_layer = 16
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_riwsv")
@@ -418,7 +420,7 @@ position = Vector2(2.26538, 3.16614)
 shape = SubResource("RectangleShape2D_o38gs")
 
 [node name="Cartel3" type="StaticBody2D" parent="Escenario/LimEstadio"]
-position = Vector2(0, -340.179)
+position = Vector2(3320, 68)
 collision_layer = 16
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_riwsv")
@@ -428,7 +430,7 @@ position = Vector2(3.82111, 0)
 shape = SubResource("RectangleShape2D_lbppi")
 
 [node name="Cartel4" type="StaticBody2D" parent="Escenario/LimEstadio"]
-position = Vector2(0, 340.179)
+position = Vector2(3312, 3604)
 collision_layer = 16
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_riwsv")
@@ -441,7 +443,7 @@ shape = SubResource("RectangleShape2D_kfknh")
 position = Vector2(952, 544)
 
 [node name="SaqueMedio" type="Marker2D" parent="Escenario/PuntosReinicio"]
-position = Vector2(11.3265, -10.1022)
+position = Vector2(3321.53, 1843.44)
 
 [node name="Sprite2D" type="Sprite2D" parent="Escenario/PuntosReinicio/SaqueMedio"]
 scale = Vector2(0.05, 0.05)
@@ -459,7 +461,7 @@ position = Vector2(990.2, 465.601)
 [node name="PlayerA01" type="Node2D" parent="Players/EquipoA/Posiciones"]
 
 [node name="PosOfensiva" type="Marker2D" parent="Players/EquipoA/Posiciones/PlayerA01"]
-position = Vector2(-260.231, -20.1298)
+position = Vector2(2469.6, 1317.84)
 
 [node name="Panel" type="Panel" parent="Players/EquipoA/Posiciones/PlayerA01/PosOfensiva"]
 offset_left = -40.5359
@@ -481,7 +483,7 @@ vertical_alignment = 1
 [node name="PlayerA02" type="Node2D" parent="Players/EquipoA/Posiciones"]
 
 [node name="PosOfensiva" type="Marker2D" parent="Players/EquipoA/Posiciones/PlayerA02"]
-position = Vector2(-149.7, 176.899)
+position = Vector2(2436.45, 2394.88)
 
 [node name="Panel" type="Panel" parent="Players/EquipoA/Posiciones/PlayerA02/PosOfensiva"]
 offset_left = -40.5359
@@ -502,18 +504,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlayerA01" type="CharacterBody2D" parent="Players/EquipoA" groups=["Player"]]
-position = Vector2(990.2, 465.601)
+position = Vector2(4497.82, 1725.52)
 collision_layer = 2
-collision_mask = 21
+collision_mask = 20
 motion_mode = 1
 platform_floor_layers = 4294901760
 script = ExtResource("10_0uwb3")
-speedBall = 250.0
+speedBall = 900.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Players/EquipoA/PlayerA01"]
 texture_filter = 3
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("5_wo162")
+texture = ExtResource("12_8xl87")
 
 [node name="Label" type="Label" parent="Players/EquipoA/PlayerA01"]
 texture_filter = 3
@@ -522,22 +523,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -2.76373
-offset_top = -6.16739
-offset_right = 37.2363
-offset_bottom = 19.8326
+offset_left = -3.62457
+offset_top = -10.7948
+offset_right = 36.3755
+offset_bottom = 24.2052
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 13
 text = "1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/EquipoA/PlayerA01"]
 shape = SubResource("CircleShape2D_uls8d")
 
 [node name="ballPie" type="Marker2D" parent="Players/EquipoA/PlayerA01"]
-position = Vector2(-9, 0)
+position = Vector2(-25, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Players/EquipoA/PlayerA01"]
 libraries = {
@@ -556,24 +557,25 @@ script = ExtResource("14_u8vcb")
 shape = SubResource("CircleShape2D_yfuhh")
 
 [node name="RayoLibertad" type="RayCast2D" parent="Players/EquipoA/PlayerA01/Triggers"]
-target_position = Vector2(-60, 0)
+scale = Vector2(1, 10)
+target_position = Vector2(-300, 0)
+collision_mask = 2
 
 [node name="Personal" type="Node2D" parent="Players/EquipoA/PlayerA01"]
 script = ExtResource("12_ohwlb")
 
 [node name="PlayerA02" type="CharacterBody2D" parent="Players/EquipoA" groups=["Player"]]
-position = Vector2(978.214, 605.693)
+position = Vector2(4576.55, 2823.15)
 collision_layer = 2
-collision_mask = 21
+collision_mask = 20
 motion_mode = 1
 platform_floor_layers = 4294901760
 script = ExtResource("10_0uwb3")
-speedBall = 250.0
+speedBall = 900.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Players/EquipoA/PlayerA02"]
 texture_filter = 3
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("5_wo162")
+texture = ExtResource("12_8xl87")
 
 [node name="Label" type="Label" parent="Players/EquipoA/PlayerA02"]
 texture_filter = 3
@@ -582,22 +584,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -2.76373
-offset_top = -6.16739
-offset_right = 37.2363
-offset_bottom = 19.8326
+offset_left = -4.01373
+offset_top = -10.3801
+offset_right = 35.9863
+offset_bottom = 24.6199
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 13
 text = "2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/EquipoA/PlayerA02"]
 shape = SubResource("CircleShape2D_uls8d")
 
 [node name="ballPie" type="Marker2D" parent="Players/EquipoA/PlayerA02"]
-position = Vector2(-9, 0)
+position = Vector2(-25, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Players/EquipoA/PlayerA02"]
 libraries = {
@@ -616,7 +618,8 @@ script = ExtResource("14_u8vcb")
 shape = SubResource("CircleShape2D_yfuhh")
 
 [node name="RayoLibertad" type="RayCast2D" parent="Players/EquipoA/PlayerA02/Triggers"]
-target_position = Vector2(-60, 0)
+scale = Vector2(1, 10)
+target_position = Vector2(-250, 0)
 
 [node name="Personal" type="Node2D" parent="Players/EquipoA/PlayerA02"]
 script = ExtResource("14_b8o25")
@@ -624,11 +627,11 @@ script = ExtResource("14_b8o25")
 [node name="PuntosReinicio" type="Node2D" parent="Players/EquipoA"]
 
 [node name="SaqueMedio" type="Marker2D" parent="Players/EquipoA/PuntosReinicio"]
-position = Vector2(976.599, 518.148)
+position = Vector2(4423.74, 2211.48)
 
 [node name="Ball" type="RigidBody2D" parent="." groups=["Ball"]]
 texture_filter = 3
-position = Vector2(952, 544)
+position = Vector2(4274.1, 2387.89)
 collision_mask = 22
 physics_material_override = SubResource("PhysicsMaterial_tqvx2")
 continuous_cd = 2
@@ -636,12 +639,11 @@ max_contacts_reported = 30
 contact_monitor = true
 linear_damp = 0.5
 script = ExtResource("5_k037j")
-weightLerp = 0.3
+weightLerp = 0.1
 
 [node name="Sprite2D" type="Sprite2D" parent="Ball"]
 texture_filter = 3
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_6almw")
+texture = ExtResource("17_obw50")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
 shape = SubResource("CircleShape2D_r6vsu")
@@ -654,14 +656,13 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_1fvwe")
 
 [node name="Camera2D" type="Camera2D" parent="Ball"]
-zoom = Vector2(4, 4)
+zoom = Vector2(2.5, 2.5)
 limit_left = 0
 limit_top = 0
-limit_right = 1920
-limit_bottom = 1080
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
+script = ExtResource("18_mb1ey")
 
 [connection signal="body_entered" from="Escenario/Arco1/Triggers/AreaDisparo" to="Players/EquipoA" method="_on_area_disparo_body_entered"]
 [connection signal="body_exited" from="Escenario/Arco1/Triggers/AreaDisparo" to="Players/EquipoA" method="_on_area_disparo_body_exited"]

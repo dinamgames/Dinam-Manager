@@ -20,15 +20,16 @@ func _physics_process(_delta):
 func EstadosPelota():
 	match estadosPelota:
 		"libre":
-			pass
+			set_collision_mask_value(2, true)
 		"pelotaAlPie":
 			linear_velocity = Vector2.ZERO
 			Match.posesionTeam = bodyPlayer.equipo
+			set_collision_mask_value(2, false)
 			#global_transform.origin = bodyPlayer.ballPie. # ESTO FUNCIONABA, PERO BRUSCO
 			# PROBANDO LERP
 			global_transform.origin = lerp(global_transform.origin, bodyPlayer.ballPie, weightLerp )
 		"pelotaALaMano": 
-			pass
+			set_collision_mask_value(2, false)
 
 
 func ObjetivoPelota():
@@ -46,6 +47,7 @@ func Patear(destino : Vector2, speedBall):
 
 func _on_ball_area_body_entered(body):
 	if body.is_in_group("Player"):
+		print("colisión")
 		bodyPlayer = body
 		if Match.isPelotaParada == true:
 			estadosPelota = "pelotaAlPie"

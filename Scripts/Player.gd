@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 50 # Era 50
+var speed : float = 0.0
+const SPEED_FINAL : float = 200.0
 
 @export var speedBall : float
 
@@ -51,7 +52,11 @@ func EncargadosFalta():
 func Pasar():
 	var destinoPase = equipo_a.DestinoPase()
 	if Ball.estadosPelota == "pelotaAlPie":
+		set_collision_layer_value(2, false)
 		Patear(destinoPase)
+		await get_tree().create_timer(0.5).timeout
+		set_collision_layer_value(2, true)
+
 
 func Patear(destino):
 	pateando = true
@@ -69,11 +74,18 @@ func Conducir():
 	else: 	
 		$AnimationPlayer.stop()
 
+func Accel(speed_inicial):
+	speed = lerp(speed_inicial, SPEED_FINAL, 0.025)
+	return speed
 
 func Desplazamiento():
+	if velocity == Vector2.ZERO:
+		speed = 0
 	direccion = global_position.direction_to(objetivo)
 	direccion = direccion.normalized()
-	velocity = direccion * SPEED
+	Accel(speed)
+	var speed_accel = Accel(speed)
+	velocity = direccion * speed_accel
 	move_and_slide()
 
 
