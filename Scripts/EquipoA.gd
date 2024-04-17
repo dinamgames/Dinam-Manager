@@ -3,15 +3,18 @@ extends Node2D
 var ArrayPlayersPelota = [0, 1,]
 var playerPorLaPelota
 var destinoPase : Vector2 = Vector2.ZERO
+var receptorPase
 var bodySacaMedio
 
 @onready var Player01 = $PlayerA01
 @onready var Player02 = $PlayerA02
 @onready var Ball = get_tree().get_nodes_in_group("Ball")[0]
 
-func _process(_delta):
+func _physics_process(_delta):
 	DisPlayersPelota()
 	DestinoPase()
+	if destinoPase:
+		$Sprite2D.global_transform.origin = destinoPase
 
 func DisPlayersPelota():
 	ArrayPlayersPelota[0] = ( 
@@ -32,16 +35,12 @@ func DisPlayersPelota():
 		
 func DestinoPase(): # Esta función reemplazarla por la elección de pase
 	if Ball.bodyPlayer == Player01:
-		if Player02.velocity != Vector2.ZERO:
-			destinoPase = Player02.ballPie
-		else:
-			destinoPase = Player02.global_transform.origin
+		receptorPase = Player02
 	else:
-		if Player01.velocity != Vector2.ZERO:
-			destinoPase = Player01.ballPie
-		else:
-			destinoPase = Player01.global_transform.origin
-		
+		receptorPase = Player01
+
+	destinoPase = receptorPase.global_transform.origin
+	
 	return destinoPase
 		
 	

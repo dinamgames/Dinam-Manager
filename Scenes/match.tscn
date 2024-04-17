@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dal6qywx61j4"]
+[gd_scene load_steps=53 format=3 uid="uid://dal6qywx61j4"]
 
 [ext_resource type="Script" path="res://Scripts/match.gd" id="1_1xabp"]
 [ext_resource type="Script" path="res://Scripts/ControlLabel.gd" id="2_nuei4"]
@@ -12,7 +12,9 @@
 [ext_resource type="Script" path="res://Scripts/EquipoA.gd" id="9_hws5a"]
 [ext_resource type="Script" path="res://Scripts/Players.gd" id="9_yqymw"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="10_0uwb3"]
+[ext_resource type="Texture2D" uid="uid://8u8n8tn6ktqm" path="res://Assets/graphics/ChapaPlayer.png" id="11_upfwr"]
 [ext_resource type="Texture2D" uid="uid://w0lbiymgiig6" path="res://Assets/graphics/ChapaPlayer-export.png" id="12_8xl87"]
+[ext_resource type="Texture2D" uid="uid://ctw6boeuc1omg" path="res://Assets/graphics/CHapaColision.png" id="12_mo50q"]
 [ext_resource type="Script" path="res://Scripts/PersonalA01.gd" id="12_ohwlb"]
 [ext_resource type="Script" path="res://Scripts/PersonalA02.gd" id="14_b8o25"]
 [ext_resource type="Script" path="res://Scripts/Decisiones.gd" id="14_u8vcb"]
@@ -93,11 +95,12 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-25, 0)]
+"values": [Vector2(-35, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_i1erh"]
 resource_name = "conduccion"
+length = 0.8
 loop_mode = 1
 step = 0.05
 tracks/0/type = "value"
@@ -107,10 +110,10 @@ tracks/0/path = NodePath("ballPie:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-25, 0), Vector2(-90, 0), Vector2(-25, 0)]
+"values": [Vector2(-35, 0), Vector2(-60, 0), Vector2(-35, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_12ocg"]
@@ -130,8 +133,26 @@ radius = 4.5
 [sub_resource type="CircleShape2D" id="CircleShape2D_1fvwe"]
 radius = 6.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ha8dj"]
+size = Vector2(1070.14, 597.036)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hc6m5"]
+size = Vector2(661.946, 309.543)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyf2m"]
+size = Vector2(653.262, 957.507)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftn2o"]
+size = Vector2(654.395, 319.901)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m828a"]
+size = Vector2(1075.62, 591.944)
+
 [node name="Match" type="Node2D" groups=["Match"]]
 script = ExtResource("1_1xabp")
+metadata/_edit_vertical_guides_ = [2104.7, 6424.5, 4265.05, 3185.27, 5344.95, 2766.13, 3514.78, 5765.04, 5012.19]
+metadata/_edit_horizontal_guides_ = [991.75, 3792.35, 1592.45, 3190.52, 1910.8, 2870.5]
+metadata/_edit_lock_ = true
 
 [node name="FuncReinicio" type="Node2D" parent="."]
 script = ExtResource("2_rn1kn")
@@ -304,6 +325,7 @@ position = Vector2(-67.4502, -1.82324)
 shape = SubResource("RectangleShape2D_fmtof")
 
 [node name="Triggers" type="Node2D" parent="Escenario/Arco1"]
+visible = false
 
 [node name="AreaDisparo" type="Area2D" parent="Escenario/Arco1/Triggers"]
 position = Vector2(88, 0)
@@ -455,13 +477,17 @@ script = ExtResource("9_yqymw")
 [node name="EquipoA" type="Node2D" parent="Players"]
 script = ExtResource("9_hws5a")
 
+[node name="Sprite2D" type="Sprite2D" parent="Players/EquipoA"]
+visible = false
+texture = ExtResource("11_upfwr")
+
 [node name="Posiciones" type="Node2D" parent="Players/EquipoA"]
 position = Vector2(990.2, 465.601)
 
 [node name="PlayerA01" type="Node2D" parent="Players/EquipoA/Posiciones"]
 
 [node name="PosOfensiva" type="Marker2D" parent="Players/EquipoA/Posiciones/PlayerA01"]
-position = Vector2(2469.6, 1317.84)
+position = Vector2(2243.33, 1606.34)
 
 [node name="Panel" type="Panel" parent="Players/EquipoA/Posiciones/PlayerA01/PosOfensiva"]
 offset_left = -40.5359
@@ -483,7 +509,7 @@ vertical_alignment = 1
 [node name="PlayerA02" type="Node2D" parent="Players/EquipoA/Posiciones"]
 
 [node name="PosOfensiva" type="Marker2D" parent="Players/EquipoA/Posiciones/PlayerA02"]
-position = Vector2(2436.45, 2394.88)
+position = Vector2(2085.72, 2123.35)
 
 [node name="Panel" type="Panel" parent="Players/EquipoA/Posiciones/PlayerA02/PosOfensiva"]
 offset_left = -40.5359
@@ -510,22 +536,29 @@ collision_mask = 20
 motion_mode = 1
 platform_floor_layers = 4294901760
 script = ExtResource("10_0uwb3")
-speedBall = 900.0
+accel = 0.03
 
-[node name="Sprite2D" type="Sprite2D" parent="Players/EquipoA/PlayerA01"]
+[node name="Graphics" type="Node2D" parent="Players/EquipoA/PlayerA01"]
+
+[node name="Coll" type="Sprite2D" parent="Players/EquipoA/PlayerA01/Graphics"]
+modulate = Color(1, 1, 1, 0.552941)
+texture_filter = 3
+texture = ExtResource("12_mo50q")
+
+[node name="Player" type="Sprite2D" parent="Players/EquipoA/PlayerA01/Graphics"]
 texture_filter = 3
 texture = ExtResource("12_8xl87")
 
-[node name="Label" type="Label" parent="Players/EquipoA/PlayerA01"]
+[node name="Label" type="Label" parent="Players/EquipoA/PlayerA01/Graphics"]
 texture_filter = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -3.62457
+offset_left = -3.62451
 offset_top = -10.7948
-offset_right = 36.3755
+offset_right = 36.3756
 offset_bottom = 24.2052
 grow_horizontal = 2
 grow_vertical = 2
@@ -538,7 +571,7 @@ text = "1"
 shape = SubResource("CircleShape2D_uls8d")
 
 [node name="ballPie" type="Marker2D" parent="Players/EquipoA/PlayerA01"]
-position = Vector2(-25, 0)
+position = Vector2(-35, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Players/EquipoA/PlayerA01"]
 libraries = {
@@ -565,28 +598,35 @@ collision_mask = 2
 script = ExtResource("12_ohwlb")
 
 [node name="PlayerA02" type="CharacterBody2D" parent="Players/EquipoA" groups=["Player"]]
-position = Vector2(4576.55, 2823.15)
+position = Vector2(4589.57, 2822.56)
 collision_layer = 2
 collision_mask = 20
 motion_mode = 1
 platform_floor_layers = 4294901760
 script = ExtResource("10_0uwb3")
-speedBall = 900.0
+accel = 0.03
 
-[node name="Sprite2D" type="Sprite2D" parent="Players/EquipoA/PlayerA02"]
+[node name="Graphics" type="Node2D" parent="Players/EquipoA/PlayerA02"]
+
+[node name="Coll" type="Sprite2D" parent="Players/EquipoA/PlayerA02/Graphics"]
+modulate = Color(1, 1, 1, 0.552941)
+texture_filter = 3
+texture = ExtResource("12_mo50q")
+
+[node name="Player" type="Sprite2D" parent="Players/EquipoA/PlayerA02/Graphics"]
 texture_filter = 3
 texture = ExtResource("12_8xl87")
 
-[node name="Label" type="Label" parent="Players/EquipoA/PlayerA02"]
+[node name="Label" type="Label" parent="Players/EquipoA/PlayerA02/Graphics"]
 texture_filter = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.01373
+offset_left = -4.01367
 offset_top = -10.3801
-offset_right = 35.9863
+offset_right = 35.9864
 offset_bottom = 24.6199
 grow_horizontal = 2
 grow_vertical = 2
@@ -599,7 +639,7 @@ text = "2"
 shape = SubResource("CircleShape2D_uls8d")
 
 [node name="ballPie" type="Marker2D" parent="Players/EquipoA/PlayerA02"]
-position = Vector2(-25, 0)
+position = Vector2(-35, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Players/EquipoA/PlayerA02"]
 libraries = {
@@ -656,13 +696,91 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_1fvwe")
 
 [node name="Camera2D" type="Camera2D" parent="Ball"]
-zoom = Vector2(2.5, 2.5)
 limit_left = 0
 limit_top = 0
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 script = ExtResource("18_mb1ey")
+
+[node name="ZonasTacticas" type="Node2D" parent="."]
+
+[node name="Zona1" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(2432.46, 1296.97)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona1"]
+position = Vector2(214.422, -2.67737)
+shape = SubResource("RectangleShape2D_ha8dj")
+
+[node name="Zona2" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(2469.28, 1775.46)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona2"]
+position = Vector2(-33.405, -20.392)
+shape = SubResource("RectangleShape2D_hc6m5")
+
+[node name="Zona3" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(2444.63, 2387.61)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona3"]
+position = Vector2(-7.67065, 4.98877)
+shape = SubResource("RectangleShape2D_iyf2m")
+
+[node name="Zona4" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(2415.58, 3034.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona4"]
+position = Vector2(20.6453, -4.11572)
+shape = SubResource("RectangleShape2D_ftn2o")
+
+[node name="Zona5" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(2420.7, 3496.95)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona5"]
+position = Vector2(226.439, -5.83862)
+shape = SubResource("RectangleShape2D_m828a")
+
+[node name="Zona6" type="Area2D" parent="ZonasTacticas"]
+
+[node name="Zona7" type="Area2D" parent="ZonasTacticas"]
+
+[node name="Zona8" type="Area2D" parent="ZonasTacticas"]
+
+[node name="Zona9" type="Area2D" parent="ZonasTacticas"]
+
+[node name="Zona10" type="Area2D" parent="ZonasTacticas"]
+
+[node name="Zona11" type="Area2D" parent="ZonasTacticas"]
+
+[node name="Zona12" type="Area2D" parent="ZonasTacticas"]
+
+[node name="Zona13" type="Area2D" parent="ZonasTacticas"]
+
+[node name="Zona14" type="Area2D" parent="ZonasTacticas"]
+
+[node name="Zona15" type="Area2D" parent="ZonasTacticas"]
+
+[node name="Zona16" type="Area2D" parent="ZonasTacticas"]
+
+[node name="Zona17" type="Area2D" parent="ZonasTacticas"]
+
+[node name="Zona18" type="Area2D" parent="ZonasTacticas"]
+
+[node name="Zona19" type="Area2D" parent="ZonasTacticas"]
+
+[node name="Zona20" type="Area2D" parent="ZonasTacticas"]
+
+[node name="Zona21" type="Area2D" parent="ZonasTacticas"]
+
+[node name="Zona22" type="Area2D" parent="ZonasTacticas"]
+
+[node name="Zona23" type="Area2D" parent="ZonasTacticas"]
+
+[node name="Zona24" type="Area2D" parent="ZonasTacticas"]
+
+[node name="Zona25" type="Area2D" parent="ZonasTacticas"]
+
+[node name="Zona26" type="Area2D" parent="ZonasTacticas"]
 
 [connection signal="body_entered" from="Escenario/Arco1/Triggers/AreaDisparo" to="Players/EquipoA" method="_on_area_disparo_body_entered"]
 [connection signal="body_exited" from="Escenario/Arco1/Triggers/AreaDisparo" to="Players/EquipoA" method="_on_area_disparo_body_exited"]

@@ -38,7 +38,7 @@ func ObjetivoPelota():
 
 
 func Patear(destino : Vector2, speedBall):
-	direccion = global_position.direction_to(destino)
+	direccion = global_transform.origin.direction_to(destino)
 	direccion = direccion.normalized()
 	var impulso = direccion * speedBall
 	linear_velocity = Vector2.ZERO
@@ -47,7 +47,6 @@ func Patear(destino : Vector2, speedBall):
 
 func _on_ball_area_body_entered(body):
 	if body.is_in_group("Player"):
-		print("colisión")
 		bodyPlayer = body
 		if Match.isPelotaParada == true:
 			estadosPelota = "pelotaAlPie"

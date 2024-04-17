@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2tpb7gvrp5e0"]
+
+[ext_resource type="Texture2D" uid="uid://bquh82qy3caoh" path="res://Assets/graphics/sistema_tactico.png" id="1_baa6i"]
+[ext_resource type="Texture2D" uid="uid://ctw6boeuc1omg" path="res://Assets/graphics/CHapaColision.png" id="2_0yt74"]
+
+[node name="SistemaTactico" type="Node2D"]
+position = Vector2(191.55, 124.474)
+
+[node name="SistemaTactico" type="Sprite2D" parent="."]
+texture_filter = 3
+texture = ExtResource("1_baa6i")
+
+[node name="Player Avanzada" type="Node2D" parent="."]
+position = Vector2(-39.5221, -2.52269)
+
+[node name="CHapaColision" type="Sprite2D" parent="Player Avanzada"]
+position = Vector2(442.298, 0.940475)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_0yt74")
+
+[node name="PlayerGeneral" type="Node2D" parent="."]
+position = Vector2(-39.5221, -2.52269)
+
+[node name="CHapaColision" type="Sprite2D" parent="PlayerGeneral"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_0yt74")
+
+[node name="Avanzadas" type="Node2D" parent="."]
+
+[node name="SistemaTacticoAvanzado" type="Sprite2D" parent="Avanzadas"]
+texture_filter = 3
+position = Vector2(402.296, 0)
+texture = ExtResource("1_baa6i")
