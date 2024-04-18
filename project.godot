@@ -63,6 +63,7 @@ ZoomOut={
 2d_physics/layer_3="Palos"
 2d_physics/layer_4="Larguero"
 2d_physics/layer_5="Resto"
+2d_physics/layer_6="ZonasTacticas"
 
 [physics]
 

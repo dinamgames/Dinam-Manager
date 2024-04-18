@@ -6,6 +6,7 @@ extends Control
 @onready var func_reinicio = $"../../FuncReinicio"
 @onready var player_a_01 = $"../../Players/EquipoA/PlayerA01"
 @onready var player_a_02 = $"../../Players/EquipoA/PlayerA02"
+@onready var players = $"../../Players"
 
 
 func _process(_delta):
@@ -23,6 +24,7 @@ func _process(_delta):
 	$VBoxContainer/Label8.text = "En Partido: " + str(Match.enPartido)
 	$VBoxContainer/Label9.text = "Quieto Player1: " + str(player_a_01.quieto)
 	$VBoxContainer/Label10.text = "Quieto Player2: " + str(player_a_02.quieto)
+	$VBoxContainer/Label11.text = "Zona Táctica: " + str(players.zonaTactica)
 
 
 

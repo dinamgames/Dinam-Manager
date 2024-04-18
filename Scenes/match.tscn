@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://dal6qywx61j4"]
+[gd_scene load_steps=74 format=3 uid="uid://dal6qywx61j4"]
 
 [ext_resource type="Script" path="res://Scripts/match.gd" id="1_1xabp"]
 [ext_resource type="Script" path="res://Scripts/ControlLabel.gd" id="2_nuei4"]
@@ -148,6 +148,69 @@ size = Vector2(654.395, 319.901)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m828a"]
 size = Vector2(1075.62, 591.944)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbud0"]
+size = Vector2(747.548, 311.479)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3o1mu"]
+size = Vector2(742.548, 949.981)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugrjd"]
+size = Vector2(741.671, 314.495)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4vwc"]
+size = Vector2(1068.58, 588.17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5oof7"]
+size = Vector2(741.528, 311.127)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpk8y"]
+size = Vector2(737.148, 949.266)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0whv"]
+size = Vector2(737.386, 306.459)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7lrn"]
+size = Vector2(1072, 590)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7a07"]
+size = Vector2(1059.86, 584.66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmhk0"]
+size = Vector2(735.882, 313.596)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7vv5"]
+size = Vector2(733.148, 954.189)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c778l"]
+size = Vector2(735.391, 311.127)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwafu"]
+size = Vector2(1072.24, 590.865)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bh4ss"]
+size = Vector2(1063.37, 587.123)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5c14h"]
+size = Vector2(745.034, 312.814)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klss7"]
+size = Vector2(739.501, 950.406)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_juch0"]
+size = Vector2(748.119, 313.955)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vww40"]
+size = Vector2(1067.87, 587.33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4n75"]
+size = Vector2(650.356, 311.815)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbsr8"]
+size = Vector2(644.882, 947.523)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rymvq"]
+size = Vector2(646.072, 314.305)
+
 [node name="Match" type="Node2D" groups=["Match"]]
 script = ExtResource("1_1xabp")
 metadata/_edit_vertical_guides_ = [2104.7, 6424.5, 4265.05, 3185.27, 5344.95, 2766.13, 3514.78, 5765.04, 5012.19]
@@ -225,21 +288,26 @@ offset_bottom = 131.0
 grow_horizontal = 0
 
 [node name="Label1" type="Label" parent="CanvasLayer/Control/VboxControles"]
+visible = false
 layout_mode = 2
 text = "En Juego: Barra espaciadora"
 
 [node name="Label2" type="Label" parent="CanvasLayer/Control/VboxControles"]
+visible = false
 layout_mode = 2
 text = "Patear: Q"
 
 [node name="Label3" type="Label" parent="CanvasLayer/Control/VboxControles"]
+visible = false
 layout_mode = 2
 text = "Pasar: A"
 
 [node name="Label4" type="Label" parent="CanvasLayer/Control/VboxControles"]
+visible = false
 layout_mode = 2
 
 [node name="Label5" type="Label" parent="CanvasLayer/Control/VboxControles"]
+visible = false
 layout_mode = 2
 
 [node name="Escenario" type="Node2D" parent="."]
@@ -604,7 +672,7 @@ collision_mask = 20
 motion_mode = 1
 platform_floor_layers = 4294901760
 script = ExtResource("10_0uwb3")
-accel = 0.03
+accel = 0.05
 
 [node name="Graphics" type="Node2D" parent="Players/EquipoA/PlayerA02"]
 
@@ -672,14 +740,14 @@ position = Vector2(4423.74, 2211.48)
 [node name="Ball" type="RigidBody2D" parent="." groups=["Ball"]]
 texture_filter = 3
 position = Vector2(4274.1, 2387.89)
-collision_mask = 22
+collision_mask = 54
 physics_material_override = SubResource("PhysicsMaterial_tqvx2")
 continuous_cd = 2
 max_contacts_reported = 30
 contact_monitor = true
 linear_damp = 0.5
 script = ExtResource("5_k037j")
-weightLerp = 0.1
+weightLerp = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="Ball"]
 texture_filter = 3
@@ -689,7 +757,6 @@ texture = ExtResource("17_obw50")
 shape = SubResource("CircleShape2D_r6vsu")
 
 [node name="BallArea" type="Area2D" parent="Ball"]
-collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball/BallArea"]
@@ -707,6 +774,7 @@ script = ExtResource("18_mb1ey")
 
 [node name="Zona1" type="Area2D" parent="ZonasTacticas"]
 position = Vector2(2432.46, 1296.97)
+collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona1"]
 position = Vector2(214.422, -2.67737)
@@ -714,6 +782,7 @@ shape = SubResource("RectangleShape2D_ha8dj")
 
 [node name="Zona2" type="Area2D" parent="ZonasTacticas"]
 position = Vector2(2469.28, 1775.46)
+collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona2"]
 position = Vector2(-33.405, -20.392)
@@ -721,6 +790,7 @@ shape = SubResource("RectangleShape2D_hc6m5")
 
 [node name="Zona3" type="Area2D" parent="ZonasTacticas"]
 position = Vector2(2444.63, 2387.61)
+collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona3"]
 position = Vector2(-7.67065, 4.98877)
@@ -728,6 +798,7 @@ shape = SubResource("RectangleShape2D_iyf2m")
 
 [node name="Zona4" type="Area2D" parent="ZonasTacticas"]
 position = Vector2(2415.58, 3034.3)
+collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona4"]
 position = Vector2(20.6453, -4.11572)
@@ -735,53 +806,203 @@ shape = SubResource("RectangleShape2D_ftn2o")
 
 [node name="Zona5" type="Area2D" parent="ZonasTacticas"]
 position = Vector2(2420.7, 3496.95)
+collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona5"]
 position = Vector2(226.439, -5.83862)
 shape = SubResource("RectangleShape2D_m828a")
 
 [node name="Zona6" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(3138.88, 1757.78)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona6"]
+position = Vector2(2.89404, -4.81494)
+shape = SubResource("RectangleShape2D_rbud0")
 
 [node name="Zona7" type="Area2D" parent="ZonasTacticas"]
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona7"]
+position = Vector2(3142.54, 2389.3)
+shape = SubResource("RectangleShape2D_3o1mu")
 
 [node name="Zona8" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(3148.04, 3015.29)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona8"]
+position = Vector2(-7.24707, 14.0981)
+shape = SubResource("RectangleShape2D_ugrjd")
 
 [node name="Zona9" type="Area2D" parent="ZonasTacticas"]
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona9"]
+position = Vector2(3724.82, 1294.06)
+shape = SubResource("RectangleShape2D_q4vwc")
 
 [node name="Zona10" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(3888.31, 1743.56)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona10"]
+position = Vector2(0.882568, 8.82202)
+shape = SubResource("RectangleShape2D_5oof7")
 
 [node name="Zona11" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(3880.06, 2387.45)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona11"]
+position = Vector2(12.4456, 0.571289)
+shape = SubResource("RectangleShape2D_kpk8y")
 
 [node name="Zona12" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(3898.31, 3043.11)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona12"]
+position = Vector2(-9.55396, -12.6482)
+shape = SubResource("RectangleShape2D_r0whv")
 
 [node name="Zona13" type="Area2D" parent="ZonasTacticas"]
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona13"]
+position = Vector2(3725.55, 3491.16)
+shape = SubResource("RectangleShape2D_f7lrn")
 
 [node name="Zona14" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(4808.38, 1325.66)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona14"]
+position = Vector2(0.279297, -33.2163)
+shape = SubResource("RectangleShape2D_x7a07")
 
 [node name="Zona15" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(4652.83, 1736.59)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona15"]
+position = Vector2(-12.4141, 14.5942)
+shape = SubResource("RectangleShape2D_wmhk0")
 
 [node name="Zona16" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(4682.11, 2394.87)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona16"]
+position = Vector2(-41.0586, -1.62622)
+shape = SubResource("RectangleShape2D_a7vv5")
 
 [node name="Zona17" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(4655.2, 3054.14)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona17"]
+position = Vector2(-16.1807, -24.8086)
+shape = SubResource("RectangleShape2D_c778l")
 
 [node name="Zona18" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(4830.11, 3471.22)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona18"]
+position = Vector2(-24.0225, 19.9309)
+shape = SubResource("RectangleShape2D_rwafu")
 
 [node name="Zona19" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(5869.12, 1316.88)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona19"]
+position = Vector2(12.6797, -20.9515)
+shape = SubResource("RectangleShape2D_bh4ss")
 
 [node name="Zona20" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(5374.22, 1749.87)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona20"]
+position = Vector2(14.3291, 2.73645)
+shape = SubResource("RectangleShape2D_5c14h")
 
 [node name="Zona21" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(5408.65, 2381.42)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona21"]
+position = Vector2(-21.4438, 10.4387)
+shape = SubResource("RectangleShape2D_klss7")
 
 [node name="Zona22" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(5408.65, 3013.77)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona22"]
+position = Vector2(-20.064, 17.3164)
+shape = SubResource("RectangleShape2D_juch0")
 
 [node name="Zona23" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(5880.95, 3495.46)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona23"]
+position = Vector2(3.45166, -7.24292)
+shape = SubResource("RectangleShape2D_vww40")
 
 [node name="Zona24" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(6108.27, 1749.06)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona24"]
+position = Vector2(-15.2681, 2.19666)
+shape = SubResource("RectangleShape2D_u4n75")
 
 [node name="Zona25" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(6094.82, 2367.96)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona25"]
+position = Vector2(0.541504, 20.9241)
+shape = SubResource("RectangleShape2D_dbsr8")
 
 [node name="Zona26" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(6108.27, 3027.23)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona26"]
+position = Vector2(-15.5713, 2.05176)
+shape = SubResource("RectangleShape2D_rymvq")
 
 [connection signal="body_entered" from="Escenario/Arco1/Triggers/AreaDisparo" to="Players/EquipoA" method="_on_area_disparo_body_entered"]
 [connection signal="body_exited" from="Escenario/Arco1/Triggers/AreaDisparo" to="Players/EquipoA" method="_on_area_disparo_body_exited"]
 [connection signal="body_entered" from="Ball/BallArea" to="Ball" method="_on_ball_area_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona1" to="Players" method="_on_zona_1_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona2" to="Players" method="_on_zona_2_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona3" to="Players" method="_on_zona_3_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona4" to="Players" method="_on_zona_4_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona5" to="Players" method="_on_zona_5_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona6" to="Players" method="_on_zona_6_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona7" to="Players" method="_on_zona_7_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona8" to="Players" method="_on_zona_8_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona9" to="Players" method="_on_zona_9_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona10" to="Players" method="_on_zona_10_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona11" to="Players" method="_on_zona_11_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona12" to="Players" method="_on_zona_12_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona13" to="Players" method="_on_zona_13_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona14" to="Players" method="_on_zona_14_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona15" to="Players" method="_on_zona_15_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona16" to="Players" method="_on_zona_16_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona17" to="Players" method="_on_zona_17_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona18" to="Players" method="_on_zona_18_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona19" to="Players" method="_on_zona_19_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona20" to="Players" method="_on_zona_20_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona21" to="Players" method="_on_zona_21_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona22" to="Players" method="_on_zona_22_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona23" to="Players" method="_on_zona_23_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona24" to="Players" method="_on_zona_24_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona25" to="Players" method="_on_zona_25_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona26" to="Players" method="_on_zona_26_body_entered"]
