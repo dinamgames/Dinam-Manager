@@ -187,9 +187,6 @@ size = Vector2(735.391, 311.127)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwafu"]
 size = Vector2(1072.24, 590.865)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bh4ss"]
-size = Vector2(1063.37, 587.123)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5c14h"]
 size = Vector2(745.034, 312.814)
 
@@ -199,8 +196,8 @@ size = Vector2(739.501, 950.406)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_juch0"]
 size = Vector2(748.119, 313.955)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vww40"]
-size = Vector2(1067.87, 587.33)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bh4ss"]
+size = Vector2(1063.37, 587.123)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4n75"]
 size = Vector2(650.356, 311.815)
@@ -210,6 +207,9 @@ size = Vector2(644.882, 947.523)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rymvq"]
 size = Vector2(646.072, 314.305)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vww40"]
+size = Vector2(1067.87, 587.33)
 
 [node name="Match" type="Node2D" groups=["Match"]]
 script = ExtResource("1_1xabp")
@@ -574,6 +574,26 @@ Ofensiva 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="PosDefensiva" type="Marker2D" parent="Players/EquipoA/Posiciones/PlayerA01"]
+position = Vector2(2243.33, 1606.34)
+
+[node name="Panel" type="Panel" parent="Players/EquipoA/Posiciones/PlayerA01/PosDefensiva"]
+offset_left = -40.5359
+offset_top = -23.6088
+offset_right = -0.535889
+offset_bottom = 16.3912
+scale = Vector2(2.3313, 1.28)
+
+[node name="Label" type="Label" parent="Players/EquipoA/Posiciones/PlayerA01/PosDefensiva"]
+offset_left = -34.7451
+offset_top = -26.727
+offset_right = 47.2549
+offset_bottom = 25.273
+text = "Posición 
+Defensiva 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="PlayerA02" type="Node2D" parent="Players/EquipoA/Posiciones"]
 
 [node name="PosOfensiva" type="Marker2D" parent="Players/EquipoA/Posiciones/PlayerA02"]
@@ -594,6 +614,27 @@ offset_right = 47.2549
 offset_bottom = 25.273
 text = "Posición 
 Ofensiva 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PosDefensiva" type="Marker2D" parent="Players/EquipoA/Posiciones/PlayerA02"]
+position = Vector2(2085.72, 2123.35)
+
+[node name="Panel" type="Panel" parent="Players/EquipoA/Posiciones/PlayerA02/PosDefensiva"]
+offset_left = -40.5359
+offset_top = -23.6088
+offset_right = -0.535889
+offset_bottom = 16.3912
+scale = Vector2(2.3313, 1.28)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Players/EquipoA/Posiciones/PlayerA02/PosDefensiva"]
+offset_left = -34.7451
+offset_top = -26.727
+offset_right = 47.2549
+offset_bottom = 25.273
+text = "Posición 
+Defensiva 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -821,10 +862,10 @@ position = Vector2(2.89404, -4.81494)
 shape = SubResource("RectangleShape2D_rbud0")
 
 [node name="Zona7" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(3144.76, 2391.3)
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona7"]
-position = Vector2(3142.54, 2389.3)
 shape = SubResource("RectangleShape2D_3o1mu")
 
 [node name="Zona8" type="Area2D" parent="ZonasTacticas"]
@@ -836,10 +877,10 @@ position = Vector2(-7.24707, 14.0981)
 shape = SubResource("RectangleShape2D_ugrjd")
 
 [node name="Zona9" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(3726.78, 1297.21)
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona9"]
-position = Vector2(3724.82, 1294.06)
 shape = SubResource("RectangleShape2D_q4vwc")
 
 [node name="Zona10" type="Area2D" parent="ZonasTacticas"]
@@ -867,10 +908,10 @@ position = Vector2(-9.55396, -12.6482)
 shape = SubResource("RectangleShape2D_r0whv")
 
 [node name="Zona13" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(3729.24, 3491.57)
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona13"]
-position = Vector2(3725.55, 3491.16)
 shape = SubResource("RectangleShape2D_f7lrn")
 
 [node name="Zona14" type="Area2D" parent="ZonasTacticas"]
@@ -914,68 +955,68 @@ position = Vector2(-24.0225, 19.9309)
 shape = SubResource("RectangleShape2D_rwafu")
 
 [node name="Zona19" type="Area2D" parent="ZonasTacticas"]
-position = Vector2(5869.12, 1316.88)
-collision_layer = 32
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona19"]
-position = Vector2(12.6797, -20.9515)
-shape = SubResource("RectangleShape2D_bh4ss")
-
-[node name="Zona20" type="Area2D" parent="ZonasTacticas"]
 position = Vector2(5374.22, 1749.87)
 collision_layer = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona20"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona19"]
 position = Vector2(14.3291, 2.73645)
 shape = SubResource("RectangleShape2D_5c14h")
 
-[node name="Zona21" type="Area2D" parent="ZonasTacticas"]
+[node name="Zona20" type="Area2D" parent="ZonasTacticas"]
 position = Vector2(5408.65, 2381.42)
 collision_layer = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona21"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona20"]
 position = Vector2(-21.4438, 10.4387)
 shape = SubResource("RectangleShape2D_klss7")
 
-[node name="Zona22" type="Area2D" parent="ZonasTacticas"]
+[node name="Zona21" type="Area2D" parent="ZonasTacticas"]
 position = Vector2(5408.65, 3013.77)
 collision_layer = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona22"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona21"]
 position = Vector2(-20.064, 17.3164)
 shape = SubResource("RectangleShape2D_juch0")
 
-[node name="Zona23" type="Area2D" parent="ZonasTacticas"]
-position = Vector2(5880.95, 3495.46)
+[node name="Zona22" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(5869.12, 1316.88)
 collision_layer = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona23"]
-position = Vector2(3.45166, -7.24292)
-shape = SubResource("RectangleShape2D_vww40")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona22"]
+position = Vector2(12.6797, -20.9515)
+shape = SubResource("RectangleShape2D_bh4ss")
 
-[node name="Zona24" type="Area2D" parent="ZonasTacticas"]
+[node name="Zona23" type="Area2D" parent="ZonasTacticas"]
 position = Vector2(6108.27, 1749.06)
 collision_layer = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona24"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona23"]
 position = Vector2(-15.2681, 2.19666)
 shape = SubResource("RectangleShape2D_u4n75")
 
-[node name="Zona25" type="Area2D" parent="ZonasTacticas"]
+[node name="Zona24" type="Area2D" parent="ZonasTacticas"]
 position = Vector2(6094.82, 2367.96)
 collision_layer = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona25"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona24"]
 position = Vector2(0.541504, 20.9241)
 shape = SubResource("RectangleShape2D_dbsr8")
 
-[node name="Zona26" type="Area2D" parent="ZonasTacticas"]
+[node name="Zona25" type="Area2D" parent="ZonasTacticas"]
 position = Vector2(6108.27, 3027.23)
 collision_layer = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona26"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona25"]
 position = Vector2(-15.5713, 2.05176)
 shape = SubResource("RectangleShape2D_rymvq")
+
+[node name="Zona26" type="Area2D" parent="ZonasTacticas"]
+position = Vector2(5880.95, 3495.46)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonasTacticas/Zona26"]
+position = Vector2(3.45166, -7.24292)
+shape = SubResource("RectangleShape2D_vww40")
 
 [connection signal="body_entered" from="Escenario/Arco1/Triggers/AreaDisparo" to="Players/EquipoA" method="_on_area_disparo_body_entered"]
 [connection signal="body_exited" from="Escenario/Arco1/Triggers/AreaDisparo" to="Players/EquipoA" method="_on_area_disparo_body_exited"]
@@ -998,9 +1039,9 @@ shape = SubResource("RectangleShape2D_rymvq")
 [connection signal="body_entered" from="ZonasTacticas/Zona16" to="Players" method="_on_zona_16_body_entered"]
 [connection signal="body_entered" from="ZonasTacticas/Zona17" to="Players" method="_on_zona_17_body_entered"]
 [connection signal="body_entered" from="ZonasTacticas/Zona18" to="Players" method="_on_zona_18_body_entered"]
-[connection signal="body_entered" from="ZonasTacticas/Zona19" to="Players" method="_on_zona_19_body_entered"]
-[connection signal="body_entered" from="ZonasTacticas/Zona20" to="Players" method="_on_zona_20_body_entered"]
-[connection signal="body_entered" from="ZonasTacticas/Zona21" to="Players" method="_on_zona_21_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona19" to="Players" method="_on_zona_20_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona20" to="Players" method="_on_zona_21_body_entered"]
+[connection signal="body_entered" from="ZonasTacticas/Zona21" to="Players" method="_on_zona_22_body_entered"]
 [connection signal="body_entered" from="ZonasTacticas/Zona22" to="Players" method="_on_zona_22_body_entered"]
 [connection signal="body_entered" from="ZonasTacticas/Zona23" to="Players" method="_on_zona_23_body_entered"]
 [connection signal="body_entered" from="ZonasTacticas/Zona24" to="Players" method="_on_zona_24_body_entered"]

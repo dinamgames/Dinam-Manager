@@ -1,0 +1,7 @@
+[gd_resource type="ButtonGroup" load_steps=2 format=3 uid="uid://wkhkepmtct58"]
+
+[ext_resource type="Script" path="res://Scripts/zonas_tacticas/button_group.gd" id="1_ysx64"]
+
+[resource]
+allow_unpress = true
+script = ExtResource("1_ysx64")

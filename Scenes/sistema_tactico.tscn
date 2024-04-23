@@ -1,55 +1,1536 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2tpb7gvrp5e0"]
+[gd_scene load_steps=57 format=3 uid="uid://c2tpb7gvrp5e0"]
 
-[ext_resource type="Texture2D" uid="uid://bquh82qy3caoh" path="res://Assets/graphics/sistema_tactico.png" id="1_baa6i"]
 [ext_resource type="Texture2D" uid="uid://ctw6boeuc1omg" path="res://Assets/graphics/CHapaColision.png" id="2_0yt74"]
-[ext_resource type="Texture2D" uid="uid://dwuqkulxcypuy" path="res://Assets/graphics/sistema_tactico_avanzado.png" id="3_c87qr"]
-[ext_resource type="Theme" uid="uid://3y1g4jj8fhmq" path="res://Assets/themes/button_tactic.tres" id="4_vs61c"]
+[ext_resource type="Texture2D" uid="uid://b0kbub8qho0ho" path="res://Assets/graphics/sistema_tactico_avanzadox2.png" id="3_a6dt5"]
+[ext_resource type="Script" path="res://Scripts/Avanzadas.gd" id="4_pod1p"]
+[ext_resource type="Script" path="res://Scripts/zonas_tacticas/Zona.gd" id="5_f350x"]
+[ext_resource type="Texture2D" uid="uid://bhqi4125wdmwb" path="res://Assets/graphics/buttonpress.png" id="5_i8xnw"]
+[ext_resource type="Texture2D" uid="uid://67lr6sdwmfmr" path="res://Assets/graphics/pelota_tactica.png" id="5_joe7i"]
+[ext_resource type="Script" path="res://Scripts/zonas_tacticas/PlayerMouse.gd" id="6_0mh40"]
+[ext_resource type="Script" path="res://Scripts/zonas_tacticas/PlayerAvanzada.gd" id="6_ww8aq"]
+[ext_resource type="Script" path="res://Scripts/zonas_tacticas/Zona00.gd" id="7_34gx0"]
+[ext_resource type="Script" path="res://Scripts/zonas_tacticas/OfensivasP1.gd" id="7_dwudg"]
+[ext_resource type="StyleBox" uid="uid://ced0plp5dall4" path="res://Assets/themes/new_style_box_texture.tres" id="11_l2u55"]
+[ext_resource type="Texture2D" uid="uid://dr2rrror5365l" path="res://Assets/graphics/button.png" id="11_p6mea"]
+[ext_resource type="ButtonGroup" uid="uid://wkhkepmtct58" path="res://Assets/themes/tactic_button_group.tres" id="12_80qv5"]
+[ext_resource type="Texture2D" uid="uid://spvkl6x7ouk3" path="res://Assets/graphics/button_press.png" id="12_e24b4"]
+[ext_resource type="Script" path="res://Scripts/zonas_tacticas/ButtonPlayer.gd" id="15_g8y4w"]
+[ext_resource type="Script" path="res://Scripts/zonas_tacticas/ZonasOcultar.gd" id="15_xduvl"]
+[ext_resource type="Script" path="res://Scripts/LabeltacticasPROV.gd" id="16_wf3bv"]
+[ext_resource type="Script" path="res://Scripts/zonas_tacticas/ResPlayer01.gd" id="17_po02b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2c3kg"]
+size = Vector2(169.455, 92.0693)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m1rpg"]
+radius = 5.42683
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1irv"]
+size = Vector2(101.948, 53.7273)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lo3px"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7u3g"]
+size = Vector2(101.302, 141.43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftlud"]
+size = Vector2(101.885, 53.9391)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibuv5"]
+size = Vector2(170.281, 92.0782)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bmvp"]
+size = Vector2(120.444, 53.7732)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4am0k"]
+size = Vector2(120, 142.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkmpq"]
+size = Vector2(120.25, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1qlp"]
+size = Vector2(173.82, 92.2677)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxbcx"]
+size = Vector2(174.019, 92.4661)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6cjn"]
+size = Vector2(117.865, 54.0326)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jepp8"]
+size = Vector2(117.865, 141.968)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7lrn"]
+size = Vector2(118.3, 54.2279)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bpco"]
+size = Vector2(170.174, 92.8183)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a837e"]
+size = Vector2(114.125, 54.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmgx0"]
+size = Vector2(114.21, 141.711)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jwgh"]
+size = Vector2(113.93, 54.1588)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lecrr"]
+size = Vector2(170.309, 92.4381)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulae7"]
+size = Vector2(117.666, 53.9716)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akohn"]
+size = Vector2(117.8, 141.827)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2jmpu"]
+size = Vector2(117.91, 54.0936)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_moy4f"]
+size = Vector2(170.282, 92.0782)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kv1yt"]
+size = Vector2(101.615, 52.0588)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf4bm"]
+size = Vector2(103.98, 142.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rj3wn"]
+size = Vector2(104.298, 54.2704)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l346d"]
+size = Vector2(170.447, 92.0693)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_4s48p"]
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gs38m"]
+texture = ExtResource("11_p6mea")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nflwl"]
+texture = ExtResource("12_e24b4")
+
+[sub_resource type="Theme" id="Theme_5cm6r"]
+Button/styles/focus = SubResource("StyleBoxLine_4s48p")
+Button/styles/hover = SubResource("StyleBoxTexture_gs38m")
+Button/styles/normal = ExtResource("11_l2u55")
+Button/styles/pressed = SubResource("StyleBoxTexture_nflwl")
+
+[sub_resource type="GDScript" id="GDScript_4mrwu"]
+script/source = "extends Node2D
+
+var zonaActiva : int = 0
+@onready var button_zona_01 = $\"../ZonasBase/ButtonZona01\"
+
+
+func _process(_delta):
+	if !button_zona_01.button_group.get_pressed_button():
+		zonaActiva = 0
+
+
+func _on_button_zona_01_pressed():
+	zonaActiva = 1
+
+
+func _on_button_zona_02_pressed():
+	zonaActiva = 2
+
+"
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_b8f7c"]
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2flcr"]
+texture = ExtResource("2_0yt74")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sc3no"]
+texture = ExtResource("2_0yt74")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_msqvu"]
+texture = ExtResource("2_0yt74")
+
+[sub_resource type="Theme" id="Theme_ohvrp"]
+Button/colors/font_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+Button/colors/font_focus_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+Button/colors/font_hover_color = Color(0.180392, 0.619608, 0.25098, 1)
+Button/styles/focus = SubResource("StyleBoxLine_b8f7c")
+Button/styles/hover = SubResource("StyleBoxTexture_2flcr")
+Button/styles/normal = SubResource("StyleBoxTexture_sc3no")
+Button/styles/pressed = SubResource("StyleBoxTexture_msqvu")
 
 [node name="SistemaTactico" type="Node2D"]
-position = Vector2(191.55, 124.474)
-
-[node name="SistemaTactico" type="Sprite2D" parent="."]
-texture_filter = 3
-texture = ExtResource("1_baa6i")
-
-[node name="Player Avanzada" type="Node2D" parent="."]
-position = Vector2(-39.5221, -2.52269)
-
-[node name="CHapaColision" type="Sprite2D" parent="Player Avanzada"]
-position = Vector2(442.298, 0.940475)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_0yt74")
-
-[node name="PlayerGeneral" type="Node2D" parent="."]
-position = Vector2(-39.5221, -2.52269)
-
-[node name="CHapaColision" type="Sprite2D" parent="PlayerGeneral"]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_0yt74")
+metadata/_edit_vertical_guides_ = [641.356, 1344.8, 812.058, 345.307]
+metadata/_edit_horizontal_guides_ = [95.8412, 579.876, 350.176]
 
 [node name="Avanzadas" type="Node2D" parent="."]
+visible = false
+position = Vector2(2352.25, 403.817)
 
 [node name="SistemaTacticoAvanzado" type="Sprite2D" parent="Avanzadas"]
 texture_filter = 3
-position = Vector2(402.296, 0)
-texture = ExtResource("3_c87qr")
+texture = ExtResource("3_a6dt5")
 
-[node name="Control" type="Control" parent="Avanzadas"]
+[node name="Zonas" type="Node2D" parent="Avanzadas"]
+script = ExtResource("4_pod1p")
+
+[node name="Zona01" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(-260.239, -181.657)
+script = ExtResource("5_f350x")
+zona = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona01"]
+position = Vector2(-2.66547, 1.58368)
+shape = SubResource("RectangleShape2D_2c3kg")
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona01"]
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona01/Ocultable"]
+position = Vector2(-1.75224, 2.60903)
+scale = Vector2(2.68941, 1.47182)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona01/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.890137, 0.429464)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona01/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona01/Ocultable/PlayersOfensiva"]
+z_index = 1
+z_as_relative = false
+position = Vector2(13.4848, 55.4374)
+script = ExtResource("6_0mh40")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona01/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_m1rpg")
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona01/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona01/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="Zona02" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(-298.007, -101.013)
+script = ExtResource("5_f350x")
+zona = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona02"]
+position = Vector2(1.04932, -1.85397)
+shape = SubResource("RectangleShape2D_l1irv")
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona02"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona02/Ocultable"]
+position = Vector2(2.08048, -1.01645)
+scale = Vector2(1.64186, 0.888606)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona02/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona02/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona02/Ocultable/PlayersOfensiva"]
+position = Vector2(-4.49487, 19.478)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona02/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona02/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona02/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="Zona03" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(-298.007, 0.569794)
+script = ExtResource("5_f350x")
+zona = 3
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona03"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona03/Ocultable"]
+position = Vector2(2.08048, -1.15677)
+scale = Vector2(1.64186, 2.26976)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona03/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona03/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona03/Ocultable/PlayersOfensiva"]
+position = Vector2(-16.4814, -11.9865)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona03/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona03/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona03/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona03"]
+position = Vector2(1.27155, -1.18622)
+shape = SubResource("RectangleShape2D_f7u3g")
+
+[node name="Zona04" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(-298.007, 101.219)
+script = ExtResource("5_f350x")
+zona = 4
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona04"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona04/Ocultable"]
+position = Vector2(1.9317, 0.386595)
+scale = Vector2(1.65271, 0.897375)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona04/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona04/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona04/Ocultable/PlayersOfensiva"]
+position = Vector2(-11.9865, -20.9763)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona04/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona04/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona04/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona04"]
+position = Vector2(1.31476, -0.102142)
+shape = SubResource("RectangleShape2D_ftlud")
+
+[node name="Zona05" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(-262.007, 177.07)
+script = ExtResource("5_f350x")
+zona = 5
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona05"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona05/Ocultable"]
+position = Vector2(0.0939703, 0.992433)
+scale = Vector2(2.6889, 1.49266)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona05/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona05/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona05/Ocultable/PlayersOfensiva"]
+position = Vector2(-1.49829, -46.4475)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona05/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona05/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona05/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona05"]
+position = Vector2(-0.600281, 1.11279)
+shape = SubResource("RectangleShape2D_ibuv5")
+
+[node name="Zona06" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(-181.465, -104.08)
+script = ExtResource("5_f350x")
+zona = 6
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona06"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona06/Ocultable"]
+position = Vector2(0.190643, 1.83554)
+scale = Vector2(1.92731, 0.896643)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona06/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona06/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona06/Ocultable/PlayersOfensiva"]
+position = Vector2(-8.98987, 29.9662)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona06/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona06/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona06/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona06"]
+position = Vector2(-0.285889, 1.1946)
+shape = SubResource("RectangleShape2D_0bmvp")
+
+[node name="Zona07" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(-181.888, 0.569794)
+script = ExtResource("5_f350x")
+zona = 7
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona07"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona07/Ocultable"]
+position = Vector2(0.891303, -1.15677)
+scale = Vector2(1.92058, 2.26976)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona07/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona07/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona07/Ocultable/PlayersOfensiva"]
+position = Vector2(-20.9763, 25.4712)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona07/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona07/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona07/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona07"]
+position = Vector2(0.138367, -1.19479)
+shape = SubResource("RectangleShape2D_4am0k")
+
+[node name="Zona08" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(-181.888, 102.455)
+script = ExtResource("5_f350x")
+zona = 8
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona08"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona08/Ocultable"]
+position = Vector2(1.03991, -0.562151)
+scale = Vector2(1.92522, 0.904031)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona08/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona08/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona08/Ocultable/PlayersOfensiva"]
+position = Vector2(-16.4814, -17.9797)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona08/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona08/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona08/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona08"]
+position = Vector2(0.263367, -1.20471)
+shape = SubResource("RectangleShape2D_wkmpq")
+
+[node name="Zona09" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(-83.9499, -184.947)
+script = ExtResource("5_f350x")
+zona = 9
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona09"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona09/Ocultable"]
+position = Vector2(-1.85677, 5.45782)
+scale = Vector2(2.75905, 1.49215)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona09/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona09/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona09/Ocultable/PlayersOfensiva"]
+position = Vector2(-1.49829, 35.9594)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona09/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona09/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona09/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona09"]
+position = Vector2(-2.89185, 5.09689)
+shape = SubResource("RectangleShape2D_r1qlp")
+
+[node name="Zona10" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(-83.0001, 178.119)
+script = ExtResource("5_f350x")
+zona = 10
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona10"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona10/Ocultable"]
+position = Vector2(-2.95198, 0.300032)
+scale = Vector2(2.75926, 1.49586)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona10/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona10/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona10/Ocultable/PlayersOfensiva"]
+position = Vector2(-4.49487, -47.9459)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona10/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona10/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona10/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona10"]
+position = Vector2(-3.75446, 0.0637817)
+shape = SubResource("RectangleShape2D_mxbcx")
+
+[node name="Zona11" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(-58.278, -103.563)
+script = ExtResource("5_f350x")
+zona = 11
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona11"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona11/Ocultable"]
+position = Vector2(0.503786, 0.809525)
+scale = Vector2(1.89478, 0.907553)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona11/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona11/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona11/Ocultable/PlayersOfensiva"]
+position = Vector2(14.983, 28.4678)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona11/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona11/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona11/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona11"]
+position = Vector2(-0.69812, 0.690994)
+shape = SubResource("RectangleShape2D_i6cjn")
+
+[node name="Zona12" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(-57.5288, 0.569794)
+script = ExtResource("5_f350x")
+zona = 12
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona12"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona12/Ocultable"]
+position = Vector2(-0.281859, -0.999272)
+scale = Vector2(1.89286, 2.27468)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona12/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona12/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona12/Ocultable/PlayersOfensiva"]
+position = Vector2(131.851, 28.4679)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona12/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona12/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona12/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona12"]
+position = Vector2(-1.04315, -1.45163)
+shape = SubResource("RectangleShape2D_jepp8")
+
+[node name="Zona13" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(-57.5289, 103.953)
+script = ExtResource("5_f350x")
+zona = 13
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona13"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona13/Ocultable"]
+position = Vector2(-0.75437, -2.57419)
+scale = Vector2(1.88794, 0.896643)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona13/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona13/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona13/Ocultable/PlayersOfensiva"]
+position = Vector2(167.81, 10.4881)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona13/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona13/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona13/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona13"]
+position = Vector2(-1.2428, -2.73981)
+shape = SubResource("RectangleShape2D_s7lrn")
+
+[node name="Zona14" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(87.8069, -184.471)
+script = ExtResource("5_f350x")
+zona = 14
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona14"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona14/Ocultable"]
+position = Vector2(1.63132, 5.55492)
+scale = Vector2(2.71058, 1.47408)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona14/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona14/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona14/Ocultable/PlayersOfensiva"]
+position = Vector2(136.346, 256.211)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona14/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona14/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona14/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona14"]
+position = Vector2(1.10596, 4.312)
+shape = SubResource("RectangleShape2D_3bpco")
+
+[node name="Zona15" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(62.3357, -104.312)
+script = ExtResource("5_f350x")
+zona = 15
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona15"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona15/Ocultable"]
+position = Vector2(-0.669593, 1.96824)
+scale = Vector2(1.83717, 0.898666)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona15/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona15/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona15/Ocultable/PlayersOfensiva"]
+position = Vector2(76.4137, 218.753)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona15/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona15/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona15/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona15"]
+position = Vector2(-1.14819, 1.37421)
+shape = SubResource("RectangleShape2D_a837e")
+
+[node name="Zona16" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(61.5865, 0.569794)
+script = ExtResource("5_f350x")
+zona = 16
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona16"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona16/Ocultable"]
+position = Vector2(0.455481, -1.15677)
+scale = Vector2(1.83326, 2.26976)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona16/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona16/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona16/Ocultable/PlayersOfensiva"]
+position = Vector2(190.285, 58.434)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona16/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona16/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona16/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona16"]
+position = Vector2(-0.3302, -1.39395)
+shape = SubResource("RectangleShape2D_bmgx0")
+
+[node name="Zona17" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(61.5867, 104.702)
+script = ExtResource("5_f350x")
+zona = 17
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona17"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona17/Ocultable"]
+position = Vector2(0.579312, -3.14294)
+scale = Vector2(1.81843, 0.891621)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona17/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona17/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona17/Ocultable/PlayersOfensiva"]
+position = Vector2(226.244, 13.4847)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona17/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona17/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona17/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona17"]
+position = Vector2(-0.39978, -3.65372)
+shape = SubResource("RectangleShape2D_0jwgh")
+
+[node name="Zona18" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(88.5562, 178.868)
+script = ExtResource("5_f350x")
+zona = 18
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona18"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona18/Ocultable"]
+position = Vector2(1.55071, -0.110987)
+scale = Vector2(2.69304, 1.47473)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona18/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona18/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona18/Ocultable/PlayersOfensiva"]
+position = Vector2(209.763, -32.9627)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona18/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona18/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona18/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona18"]
+position = Vector2(0.627563, -0.624451)
+shape = SubResource("RectangleShape2D_lecrr")
+
+[node name="Zona19" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(184.448, -103.563)
+script = ExtResource("5_f350x")
+zona = 19
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona19"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona19/Ocultable"]
+position = Vector2(-2.26912, 1.24566)
+scale = Vector2(1.88301, 0.888069)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona19/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona19/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona19/Ocultable/PlayersOfensiva"]
+position = Vector2(74.9154, 92.895)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona19/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona19/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona19/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona19"]
+position = Vector2(-3.25977, 0.7043)
+shape = SubResource("RectangleShape2D_ulae7")
+
+[node name="Zona20" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(184.448, 0.569794)
+script = ExtResource("5_f350x")
+zona = 20
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona20"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona20/Ocultable"]
+position = Vector2(-2.35782, -0.829012)
+scale = Vector2(1.87563, 2.25952)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona20/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona20/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona20/Ocultable/PlayersOfensiva"]
+position = Vector2(124.36, -10.4882)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona20/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona20/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona20/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona20"]
+position = Vector2(-3.34387, -1.21475)
+shape = SubResource("RectangleShape2D_akohn")
+
+[node name="Zona21" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(185.197, 103.204)
+script = ExtResource("5_f350x")
+zona = 21
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona21"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona21/Ocultable"]
+position = Vector2(-3.2433, -1.43738)
+scale = Vector2(1.87838, 0.884222)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona21/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona21/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona21/Ocultable/PlayersOfensiva"]
+position = Vector2(125.858, -38.956)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona21/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona21/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona21/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona21"]
+position = Vector2(-4.12476, -2.02826)
+shape = SubResource("RectangleShape2D_2jmpu")
+
+[node name="Zona22" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(265.356, -182.224)
+script = ExtResource("5_f350x")
+zona = 22
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona22"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona22/Ocultable"]
+position = Vector2(-1.09793, 3.08109)
+scale = Vector2(2.69304, 1.47516)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona22/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona22/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona22/Ocultable/PlayersOfensiva"]
+position = Vector2(41.9526, 212.76)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona22/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona22/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona22/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona22"]
+position = Vector2(-2.03979, 2.51263)
+shape = SubResource("RectangleShape2D_moy4f")
+
+[node name="Zona23" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(296.821, -102.813)
+script = ExtResource("5_f350x")
+zona = 23
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona23"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona23/Ocultable"]
+position = Vector2(0.593982, 0.627034)
+scale = Vector2(1.66973, 0.885449)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona23/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona23/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona23/Ocultable/PlayersOfensiva"]
+position = Vector2(5.99329, 76.4137)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona23/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona23/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona23/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona23"]
+position = Vector2(0.377197, 0.828217)
+shape = SubResource("RectangleShape2D_kv1yt")
+
+[node name="Zona24" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(298.319, 0.569794)
+script = ExtResource("5_f350x")
+zona = 24
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona24"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona24/Ocultable"]
+position = Vector2(-1.06824, -0.859126)
+scale = Vector2(1.66939, 2.26046)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona24/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona24/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona24/Ocultable/PlayersOfensiva"]
+position = Vector2(-11.9866, 28.4678)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona24/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona24/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona24/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona24"]
+position = Vector2(-2.30933, -1.31979)
+shape = SubResource("RectangleShape2D_gf4bm")
+
+[node name="Zona25" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(298.319, 103.953)
+script = ExtResource("5_f350x")
+zona = 25
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona25"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona25/Ocultable"]
+position = Vector2(-1.18987, -2.10133)
+scale = Vector2(1.66044, 0.881011)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona25/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona25/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona25/Ocultable/PlayersOfensiva"]
+position = Vector2(11.9865, -17.9797)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona25/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona25/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona25/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona25"]
+position = Vector2(-2.15076, -2.75366)
+shape = SubResource("RectangleShape2D_rj3wn")
+
+[node name="Zona26" type="Area2D" parent="Avanzadas/Zonas"]
+position = Vector2(263.109, 181.116)
+script = ExtResource("5_f350x")
+zona = 26
+
+[node name="Ocultable" type="Node2D" parent="Avanzadas/Zonas/Zona26"]
+visible = false
+
+[node name="Buttonpress" type="Sprite2D" parent="Avanzadas/Zonas/Zona26/Ocultable"]
+position = Vector2(0.855539, -2.30509)
+scale = Vector2(2.68936, 1.47257)
+texture = ExtResource("5_i8xnw")
+
+[node name="PelotaTactica" type="Sprite2D" parent="Avanzadas/Zonas/Zona26/Ocultable"]
+texture_filter = 3
+position = Vector2(-0.243347, -0.509857)
+texture = ExtResource("5_joe7i")
+
+[node name="PlayersOfensiva" type="Node2D" parent="Avanzadas/Zonas/Zona26/Ocultable"]
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona26/Ocultable/PlayersOfensiva"]
+position = Vector2(25.4712, -40.4543)
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona26/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona26/Ocultable/PlayersOfensiva/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona26/Ocultable/PlayersOfensiva/Player01"]
+shape = SubResource("CircleShape2D_lo3px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona26"]
+position = Vector2(-0.141602, -2.88434)
+shape = SubResource("RectangleShape2D_l346d")
+
+[node name="Zona00" type="Node2D" parent="Avanzadas/Zonas"]
+script = ExtResource("7_34gx0")
+
+[node name="Player01" type="Area2D" parent="Avanzadas/Zonas/Zona00"]
+position = Vector2(0, 0.305725)
+script = ExtResource("6_ww8aq")
+
+[node name="Ofensivas" type="Node2D" parent="Avanzadas/Zonas/Zona00/Player01"]
+script = ExtResource("7_dwudg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avanzadas/Zonas/Zona00/Player01"]
+shape = SubResource("CircleShape2D_m1rpg")
+
+[node name="SprOfensiva" type="Sprite2D" parent="Avanzadas/Zonas/Zona00/Player01"]
+texture_filter = 3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_0yt74")
+
+[node name="Label" type="Label" parent="Avanzadas/Zonas/Zona00/Player01"]
+texture_filter = 3
+offset_left = -4.57117
+offset_top = -11.5276
+offset_right = 35.4288
+offset_bottom = 14.4724
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="Avanzadas Botones" type="Node2D" parent="."]
+
+[node name="ZonasBase" type="Control" parent="Avanzadas Botones"]
+texture_filter = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.991, 1)
+theme = SubResource("Theme_5cm6r")
+
+[node name="ButtonZona01" type="Button" parent="Avanzadas Botones/ZonasBase"]
+texture_filter = 3
+layout_mode = 2
+offset_right = 174.0
+offset_bottom = 96.0
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("12_80qv5")
+
+[node name="ButtonZona02" type="Button" parent="Avanzadas Botones/ZonasBase"]
+texture_filter = 3
+layout_mode = 2
+offset_left = 174.0
+offset_right = 348.0
+offset_bottom = 96.0
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("12_80qv5")
+
+[node name="Zonas" type="Node2D" parent="Avanzadas Botones"]
+script = SubResource("GDScript_4mrwu")
+
+[node name="Zona00" type="Node2D" parent="Avanzadas Botones/Zonas"]
+script = ExtResource("15_xduvl")
+
+[node name="Ofensivas" type="Node2D" parent="Avanzadas Botones/Zonas/Zona00"]
+
+[node name="Control2" type="Control" parent="Avanzadas Botones/Zonas/Zona00/Ofensivas"]
+texture_filter = 3
 layout_mode = 3
 anchors_preset = 0
-offset_left = 223.721
-offset_top = -117.607
-offset_right = 263.721
-offset_bottom = -77.6067
-scale = Vector2(8.88, 5.92)
+theme = SubResource("Theme_ohvrp")
 
-[node name="Button" type="Button" parent="Avanzadas/Control"]
+[node name="ButtonP01" type="Button" parent="Avanzadas Botones/Zonas/Zona00/Ofensivas/Control2"]
 layout_mode = 0
-offset_left = 0.398144
-offset_top = 0.65694
-offset_right = 8.39814
-offset_bottom = 8.65694
-scale = Vector2(1.22523, 1)
-theme = ExtResource("4_vs61c")
-toggle_mode = true
-flat = true
+offset_left = 158.584
+offset_top = 36.5297
+offset_right = 182.584
+offset_bottom = 60.5297
+pivot_offset = Vector2(12, 12)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+action_mode = 0
+text = "1"
+script = ExtResource("15_g8y4w")
+
+[node name="Zona01" type="Node2D" parent="Avanzadas Botones/Zonas"]
+script = ExtResource("15_xduvl")
+zona = 1
+
+[node name="Ofensivas" type="Node2D" parent="Avanzadas Botones/Zonas/Zona01"]
+
+[node name="Control2" type="Control" parent="Avanzadas Botones/Zonas/Zona01/Ofensivas"]
+texture_filter = 3
+layout_mode = 3
+anchors_preset = 0
+theme = SubResource("Theme_ohvrp")
+
+[node name="ButtonP01" type="Button" parent="Avanzadas Botones/Zonas/Zona01/Ofensivas/Control2"]
+layout_mode = 0
+offset_left = 112.205
+offset_top = 36.5297
+offset_right = 136.205
+offset_bottom = 60.5297
+pivot_offset = Vector2(12, 12)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+action_mode = 0
+text = "1"
+script = ExtResource("15_g8y4w")
+
+[node name="Zona02" type="Node2D" parent="Avanzadas Botones/Zonas"]
+script = ExtResource("15_xduvl")
+zona = 2
+
+[node name="Ofensivas" type="Node2D" parent="Avanzadas Botones/Zonas/Zona02"]
+
+[node name="Control2" type="Control" parent="Avanzadas Botones/Zonas/Zona02/Ofensivas"]
+texture_filter = 3
+layout_mode = 3
+anchors_preset = 0
+theme = SubResource("Theme_ohvrp")
+
+[node name="ButtonP01" type="Button" parent="Avanzadas Botones/Zonas/Zona02/Ofensivas/Control2"]
+layout_mode = 0
+offset_left = 210.735
+offset_top = 36.0
+offset_right = 234.735
+offset_bottom = 60.0
+pivot_offset = Vector2(12, 12)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+action_mode = 0
+text = "1"
+script = ExtResource("15_g8y4w")
+
+[node name="ResPlayers" type="Node" parent="Avanzadas Botones/Zonas"]
+
+[node name="Player01" type="Node" parent="Avanzadas Botones/Zonas/ResPlayers"]
+script = ExtResource("17_po02b")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 2.64865
+offset_top = 98.0003
+offset_right = 42.6487
+offset_bottom = 121.0
+script = ExtResource("16_wf3bv")
+
+[connection signal="input_event" from="Avanzadas/Zonas/Zona01" to="Avanzadas/Zonas" method="_on_zona_01_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona01/Ocultable/PlayersOfensiva/Player01" to="Avanzadas/Zonas/Zona01/Ocultable/PlayersOfensiva/Player01" method="_on_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona02" to="Avanzadas/Zonas" method="_on_zona_02_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona03" to="Avanzadas/Zonas" method="_on_zona_03_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona04" to="Avanzadas/Zonas" method="_on_zona_04_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona05" to="Avanzadas/Zonas" method="_on_zona_05_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona06" to="Avanzadas/Zonas" method="_on_zona_06_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona07" to="Avanzadas/Zonas" method="_on_zona_07_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona08" to="Avanzadas/Zonas" method="_on_zona_08_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona09" to="Avanzadas/Zonas" method="_on_zona_09_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona10" to="Avanzadas/Zonas" method="_on_zona_10_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona11" to="Avanzadas/Zonas" method="_on_zona_11_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona12" to="Avanzadas/Zonas" method="_on_zona_12_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona13" to="Avanzadas/Zonas" method="_on_zona_13_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona14" to="Avanzadas/Zonas" method="_on_zona_14_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona15" to="Avanzadas/Zonas" method="_on_zona_15_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona16" to="Avanzadas/Zonas" method="_on_zona_16_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona17" to="Avanzadas/Zonas" method="_on_zona_17_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona18" to="Avanzadas/Zonas" method="_on_zona_18_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona19" to="Avanzadas/Zonas" method="_on_zona_19_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona20" to="Avanzadas/Zonas" method="_on_zona_20_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona21" to="Avanzadas/Zonas" method="_on_zona_21_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona22" to="Avanzadas/Zonas" method="_on_zona_22_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona23" to="Avanzadas/Zonas" method="_on_zona_23_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona24" to="Avanzadas/Zonas" method="_on_zona_24_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona25" to="Avanzadas/Zonas" method="_on_zona_25_input_event"]
+[connection signal="input_event" from="Avanzadas/Zonas/Zona26" to="Avanzadas/Zonas" method="_on_zona_26_input_event"]
+[connection signal="pressed" from="Avanzadas Botones/ZonasBase/ButtonZona01" to="Avanzadas Botones/Zonas" method="_on_button_zona_01_pressed"]
+[connection signal="pressed" from="Avanzadas Botones/ZonasBase/ButtonZona02" to="Avanzadas Botones/Zonas" method="_on_button_zona_02_pressed"]
+[connection signal="button_down" from="Avanzadas Botones/Zonas/Zona00/Ofensivas/Control2/ButtonP01" to="Avanzadas Botones/Zonas/Zona00/Ofensivas/Control2/ButtonP01" method="_on_button_down"]
+[connection signal="button_up" from="Avanzadas Botones/Zonas/Zona00/Ofensivas/Control2/ButtonP01" to="Avanzadas Botones/Zonas/Zona00/Ofensivas/Control2/ButtonP01" method="_on_button_up"]
+[connection signal="button_down" from="Avanzadas Botones/Zonas/Zona01/Ofensivas/Control2/ButtonP01" to="Avanzadas Botones/Zonas/Zona01/Ofensivas/Control2/ButtonP01" method="_on_button_down"]
+[connection signal="button_up" from="Avanzadas Botones/Zonas/Zona01/Ofensivas/Control2/ButtonP01" to="Avanzadas Botones/Zonas/Zona01/Ofensivas/Control2/ButtonP01" method="_on_button_up"]
+[connection signal="button_down" from="Avanzadas Botones/Zonas/Zona02/Ofensivas/Control2/ButtonP01" to="Avanzadas Botones/Zonas/Zona02/Ofensivas/Control2/ButtonP01" method="_on_button_down"]
+[connection signal="button_up" from="Avanzadas Botones/Zonas/Zona02/Ofensivas/Control2/ButtonP01" to="Avanzadas Botones/Zonas/Zona02/Ofensivas/Control2/ButtonP01" method="_on_button_up"]
