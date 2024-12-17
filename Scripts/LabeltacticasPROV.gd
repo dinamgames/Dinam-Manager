@@ -1,6 +1,6 @@
 extends Label
 
-@onready var zonas = $"../Avanzadas Botones/Zonas"
+@onready var zonas = $"../AvanzadasBotones/CanvasLayer/Zonas"
 
 
 

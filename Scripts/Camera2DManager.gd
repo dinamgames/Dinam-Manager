@@ -10,4 +10,3 @@ func _process(_delta):
 		offset.x = -300
 	else:
 		offset.x = 300
-

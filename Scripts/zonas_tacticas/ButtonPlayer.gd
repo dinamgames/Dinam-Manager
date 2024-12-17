@@ -19,11 +19,10 @@ var res_player
 @onready var player_11 = $"../../../../ResPlayers/Player11"
 
 
-
-@onready var lu = $"../../../../../SistemaTacticoAvanzadox4/LU"
-@onready var ld = $"../../../../../SistemaTacticoAvanzadox4/LD"
-@onready var ru = $"../../../../../SistemaTacticoAvanzadox4/RU"
-@onready var rd = $"../../../../../SistemaTacticoAvanzadox4/RD"
+@onready var lu = $"../../../../../../SistemaTacticoAvanzadox4/LU"
+@onready var ld = $"../../../../../../SistemaTacticoAvanzadox4/LD"
+@onready var ru = $"../../../../../../SistemaTacticoAvanzadox4/RU"
+@onready var rd = $"../../../../../../SistemaTacticoAvanzadox4/RD"
 
 
 func _process(_delta):
@@ -79,5 +78,3 @@ func _on_button_up():
 		res_player.ZonaZeroMode()
 	else:
 		res_player.CalcZonaZero()
-
-

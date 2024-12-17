@@ -151,5 +151,3 @@ func AreaTiroRival():
 		Pasar()
 	else:
 		Conducir()
-
-

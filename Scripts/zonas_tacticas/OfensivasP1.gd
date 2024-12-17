@@ -96,5 +96,3 @@ func CalcZona00():
 	
 	posicionesOfensivas.Zona00 = suma / 26
 	zona00.global_transform.origin = posicionesOfensivas.Zona00
-
-

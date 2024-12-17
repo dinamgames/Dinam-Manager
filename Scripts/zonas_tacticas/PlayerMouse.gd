@@ -23,4 +23,3 @@ func _on_input_event(_viewport, event, _shape_idx):
 			selected = false
 			zonas.player_seleccionado = false
 			#zona_madre.set_collision_mask_value(1, true)
-

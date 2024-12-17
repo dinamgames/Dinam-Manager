@@ -25,6 +25,3 @@ func _process(_delta):
 	$VBoxContainer/Label9.text = "Quieto Player1: " + str(player_a_01.quieto)
 	$VBoxContainer/Label10.text = "Quieto Player2: " + str(player_a_02.quieto)
 	$VBoxContainer/Label11.text = "Zona Táctica: " + str(players.zonaTactica)
-
-
-
